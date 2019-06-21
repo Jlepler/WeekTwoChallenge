@@ -37,6 +37,15 @@ public class WeekTwoChallenge {
             int randomNumberVeggies = rnd.nextInt(4);
             veggiesIngredType(randomNumberVeggies);
 
+            //Cheese addition generator
+            boolean addCheese = rnd.nextBoolean();
+            cheeseIngredAdd(addCheese);
+
+            //Guacamole addition generator
+            boolean addGuac = rnd.nextBoolean();
+            guacIngredAdd(addGuac);
+
+
             System.out.printf("\nTotal with 6%% tax: %.2f",(price + (price * .06)));
             price = 3.00;
 
@@ -137,7 +146,26 @@ public class WeekTwoChallenge {
         }
     }
 
+    private static void cheeseIngredAdd (boolean addCheese) {
+        String cheese;
+        if (addCheese){
+            cheese = "with cheese";
+            price += 0.5;
+        } else{
+            cheese = "no cheese";
+        }
+        System.out.print(cheese + ", ");
+    }
 
+    private static void guacIngredAdd (boolean addGuac) {
+        String guac = "with guacamole";
+        if (addGuac) {
+            price += 0.5;
+        } else {
+            guac = "no guacamole";
+        }
+        System.out.print(guac + ", ");
+    }
 }
 
 
